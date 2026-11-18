@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- =============================================================================
+     CLICKWAVE DIGITAL — index.html
+     -----------------------------------------------------------------------------
+     This file is the page STRUCTURE (the bones). You do not need to edit words
+     here: all text, prices and links live in js/config.js.
+     Colours and fonts live at the top of css/styles.css.
+
+     Only edit this file if you are changing the site's title / description for
+     Google and social sharing (in the <head> below).
+     ========================================================================== -->
+<html lang="en" class="no-js is-loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Clickwave Digital — Ads, websites and monthly care in Naivasha, Kenya</title>
+  <meta name="description" content="Meta and Google ads, fast websites and monthly care for hotels, car hire and beauty businesses across Kenya. Websites from KSh 9,500. Based in Naivasha.">
+  <link rel="canonical" href="https://clickwavedigital.co.ke/">
+  <meta name="theme-color" content="#060913">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Link previews (WhatsApp, Facebook, X, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Clickwave Digital">
+  <meta property="og:title" content="Clickwave Digital — We make your business impossible to miss">
+  <meta property="og:description" content="Meta and Google ads, fast websites and monthly care for hotels, car hire and beauty businesses across Kenya. Websites from KSh 9,500.">
+  <meta property="og:url" content="https://clickwavedigital.co.ke/">
+  <!-- TODO: social previews need a full web address. Replace the domain if you change it. -->
+  <meta property="og:image" content="https://clickwavedigital.co.ke/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Clickwave Digital — ads, websites and monthly care in Naivasha, Kenya">
+  <meta property="og:locale" content="en_KE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Clickwave Digital — We make your business impossible to miss">
+  <meta name="twitter:description" content="Ads, websites and monthly care for hotels, car hire and beauty businesses across Kenya.">
+  <meta name="twitter:image" content="https://clickwavedigital.co.ke/assets/og-image.png">
+
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts (pinned Google Fonts). Fallbacks are set in css/styles.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- 3D library (pinned). Only downloaded when the hero actually runs 3D. -->
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js" } }
+  </script>
+
+  <!-- Critical inline styles: stop a white flash and keep the loader usable
+       even if JavaScript fails (it hides itself after 2.6 seconds). -->
+  <style>
+    html, body { background: #060913; color: #eef2fb; }
+    .loader { position: fixed; inset: 0; z-index: 300; display: grid; place-items: center;
+      background: #060913; animation: loaderAway .7s cubic-bezier(.22,.61,.36,1) 2.6s forwards; }
+    @keyframes loaderAway { to { opacity: 0; visibility: hidden; } }
+    html:not(.is-loading) .loader { animation: none; }
+    @media (prefers-reduced-motion: reduce) { .loader { animation-delay: .4s; } }
+  </style>
+  <noscript>
+    <style>
+      .loader { display: none !important; }
+      html.is-loading { overflow: auto; }
+    </style>
+  </noscript>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Loading screen (removed by js/main.js once the page is ready) -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__word">clickwave</span>
+      <span class="loader__line"><i></i></span>
+      <span class="loader__note">Ads · Websites · Care</span>
+    </div>
+  </div>
+
+  <!-- Custom cursor, desktop only -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <span class="cursor__dot"></span>
+    <span class="cursor__ring"></span>
+  </div>
+
+  <!-- Navigation (filled from js/config.js) -->
+  <header class="site-header" id="site-header">
+    <div class="nav" id="nav"></div>
+  </header>
+
+  <main id="main">
+    <!-- =====================================================================
+         HERO — full-screen 3D waves live in #hero-stage.
+         If WebGL is unavailable or the visitor prefers reduced motion, the
+         CSS fallback inside .hero__fallback is shown instead.
+         ================================================================== -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__stage" id="hero-stage" aria-hidden="true">
+        <canvas class="hero__canvas" id="hero-canvas"></canvas>
+        <div class="hero__fallback">
+          <div class="hero__glow"></div>
+          <svg class="hero__waves" viewBox="0 0 1440 720" preserveAspectRatio="none" focusable="false">
+            <path class="hero__wave hero__wave--1" d="M-200,470 C 120,380 300,560 560,470 S 980,320 1240,430 S 1560,520 1740,440"></path>
+            <path class="hero__wave hero__wave--2" d="M-200,540 C 140,460 360,640 640,540 S 1040,400 1300,510 S 1580,590 1760,520"></path>
+            <path class="hero__wave hero__wave--3" d="M-200,610 C 160,540 420,700 700,600 S 1100,470 1360,580 S 1600,650 1780,590"></path>
+          </svg>
+          <div class="hero__dotfield"></div>
+        </div>
+        <div class="hero__scrim"></div>
+      </div>
+      <div class="shell hero__inner" id="hero-inner"></div>
+    </section>
+
+    <!-- Scrolling keyword strip -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" id="ticker"></div>
+    </div>
+
+    <!-- =====================================================================
+         CONTENT SECTIONS — every section is filled from js/config.js
+         ================================================================== -->
+    <section class="section" id="services">
+      <div class="shell" data-render="services"></div>
+    </section>
+
+    <section class="section section--tight" id="who-we-help">
+      <div class="shell" data-render="niches"></div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="shell" data-render="work"></div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="shell" data-render="process"></div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="shell" data-render="pricing"></div>
+    </section>
+
+    <section class="section section--tight" id="faq">
+      <div class="shell" data-render="faq"></div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="shell" data-render="contact"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <!-- Floating WhatsApp button (filled from js/config.js) -->
+  <div id="wa-float"></div>
+
+  <!-- If JavaScript is switched off, at least show who we are and how to call -->
+  <noscript>
+    <div class="noscript">
+      <h1>Clickwave Digital</h1>
+      <p>Ads, websites and monthly care for hotels, car hire and beauty businesses across Kenya. Based in Naivasha.</p>
+      <p>WhatsApp <a href="https://wa.me/254712345678">+254 712 345 678</a> · <a href="mailto:hello@clickwavedigital.co.ke">hello@clickwavedigital.co.ke</a></p>
+      <p>Please switch on JavaScript to see the full site.</p>
+    </div>
+  </noscript>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
